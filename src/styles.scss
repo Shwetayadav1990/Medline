@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+
+body {
+    padding:15px
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.input-control, .input-control:focus  {
+    border:none;
+    outline: none;
+}
+label {
+    font-weight: 500;
+    margin: 0;
+    font-size: 12px;
+}
+.form-control {
+    height: 30px;   
+    font-size: 12px;
+}

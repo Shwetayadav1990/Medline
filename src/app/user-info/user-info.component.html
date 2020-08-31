@@ -1,0 +1,63 @@
+<div class="wrapper">
+    <h4 class="margin-botton-0">MEDLINE COM</h4>
+    <h2>Account Registration</h2>
+    <div class="user">
+        <h4>USER INFORMATION</h4>
+    </div>
+    <div class="heading">
+        <h5>USER INFORMATION</h5>
+    </div>
+    <form name="form" #userForm="ngForm" (ngSubmit)="userForm.form.valid && onSubmit()">
+        <div class="form-group">
+            <div *ngIf=" userForm.submitted" class="alert-danger">
+                <p class="error-info">{{errorMsg}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label for="firstName">FIRST NAME*</label>
+                    <input type="text" class="form-control" [(ngModel)]="model.firstName" #firstName="ngModel" [ngClass]="{'is-invalid' : userForm.submitted && firstName.invalid}" name="firstName" required>
+                    <div class="invalid-feedback">
+                        First Name is a required field.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <label>PHONE*</label>
+                            <input type="number" class="form-control" name="phone" [(ngModel)]="model.phone" #phone="ngModel" [ngClass]="{'is-invalid': userForm.submitted && phone.invalid}" required>   
+                            <div class="invalid-feedback">
+                                Phone is a required field.
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <label>EXT</label>
+                            <input type="number" class="form-control">
+                        </div>
+                    </div>   
+                </div>
+                <div class="form-group">
+                    <label>EMAIL*</label>
+                    <input type="email" class="form-control" name="email" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{'is-invalid': userForm.submitted && email.invalid}" required>
+                    <div class="invalid-feedback">
+                        Email is a required field.
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label>LAST NAME*</label>
+                    <input type="text" class="form-control" name="lastName" [(ngModel)]="model.lastName" #lastName="ngModel" [ngClass]="{'is-invalid' : userForm.submitted && lastName.invalid}" required>
+                    <div class="invalid-feedback">
+                        Last Name is required field.
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        <div class="clearfix">
+            <input type="submit" class="btn btn-success float-right" name="next" value="NEXT" >
+        </div>
+    </form>
+</div>
